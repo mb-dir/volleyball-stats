@@ -4,6 +4,7 @@ import Clubs from "./components/Clubs/Clubs";
 import Table from "./components/Table/Table";
 import Games from "./components/Games/Games";
 import Players from "./components/Players/Players";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="mecze" element={<Games />} />
         <Route path="zawodnicy" element={<Players />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
