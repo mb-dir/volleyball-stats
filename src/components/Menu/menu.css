@@ -1,0 +1,28 @@
+.menu {
+  border-right: 2px solid lightslategray;
+  border-top: 2px solid lightslategray;
+  width: 15%;
+  height: 100vh;
+}
+.menu__list {
+  padding: 20px 0;
+  margin: 0;
+  list-style: none;
+}
+.menu__item {
+  padding: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  text-align: center;
+}
+.menu__label {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+.menu__label--active {
+  color: rgb(1, 168, 168);
+}
+.menu__label:hover {
+  color: rgb(1, 168, 168);
+}

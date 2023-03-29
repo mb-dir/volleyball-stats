@@ -1,0 +1,8 @@
+.header {
+  padding-left: 20px;
+  width: 100%;
+}
+.header__content {
+  color: rgb(1, 168, 168);
+  text-decoration: none;
+}
