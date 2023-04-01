@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mb-dir/volleyball-stats/static/css/main.13eb4fa9.css",
+    "main.js": "/mb-dir/volleyball-stats/static/js/main.bea38317.js",
+    "static/js/787.5881eab0.chunk.js": "/mb-dir/volleyball-stats/static/js/787.5881eab0.chunk.js",
+    "index.html": "/mb-dir/volleyball-stats/index.html",
+    "main.13eb4fa9.css.map": "/mb-dir/volleyball-stats/static/css/main.13eb4fa9.css.map",
+    "main.bea38317.js.map": "/mb-dir/volleyball-stats/static/js/main.bea38317.js.map",
+    "787.5881eab0.chunk.js.map": "/mb-dir/volleyball-stats/static/js/787.5881eab0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.13eb4fa9.css",
+    "static/js/main.bea38317.js"
+  ]
+}
