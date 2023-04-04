@@ -5,12 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+const isProd = process.env.NODE_ENV === "production";
+const basename = isProd ? "/volleyball-stats" : "/";
+
 const root = ReactDOM.createRoot(document.getElementById(
   "root"
 ) as HTMLElement);
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/*" element={<App />} />
       </Routes>
