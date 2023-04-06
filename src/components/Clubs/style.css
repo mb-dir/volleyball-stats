@@ -18,10 +18,10 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  text-decoration: none;
 }
 .clubCard__name {
   width: 100%;
   text-align: center;
-  text-decoration: none;
   color: rgb(1, 168, 168);
 }

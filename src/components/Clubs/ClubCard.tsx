@@ -11,8 +11,8 @@ interface ClubCardProps {
 
 const ClubCard: React.FC<ClubCardProps> = ({ className, logo, name, id }) => {
   return (
-    <Link to={`${id}`}>
-      <div className={`clubCard ${className || ""}`}>
+    <Link className={`clubCard ${className || ""}`} to={`${id}`}>
+      <div>
         <img src={logo} alt={`${name} logo img`} />
         <p className="clubCard__name">{name}</p>
       </div>
