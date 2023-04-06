@@ -37,54 +37,12 @@ const Clubs: React.FC<ClubsProps> = ({ className }) => {
       <ClubCard
         name="PSG Stal Nysa"
         logo="https://media-2.api-sports.io/volley/teams/908.png"
+        id={1}
       />
       <ClubCard
         name="PSG Stal Nysa"
         logo="https://media-2.api-sports.io/volley/teams/908.png"
-      />
-      <ClubCard
-        name="PSG Stal Nysa"
-        logo="https://media-2.api-sports.io/volley/teams/908.png"
-      />
-      <ClubCard
-        name="PSG Stal Nysa"
-        logo="https://media-2.api-sports.io/volley/teams/908.png"
-      />
-      <ClubCard
-        name="PSG Stal Nysa"
-        logo="https://media-2.api-sports.io/volley/teams/908.png"
-      />
-      <ClubCard
-        name="PSG Stal Nysa"
-        logo="https://media-2.api-sports.io/volley/teams/908.png"
-      />
-      <ClubCard
-        name="PSG Stal Nysa"
-        logo="https://media-2.api-sports.io/volley/teams/908.png"
-      />
-      <ClubCard
-        name="PSG Stal Nysa"
-        logo="https://media-2.api-sports.io/volley/teams/908.png"
-      />
-      <ClubCard
-        name="PSG Stal Nysa"
-        logo="https://media-2.api-sports.io/volley/teams/908.png"
-      />
-      <ClubCard
-        name="PSG Stal Nysa"
-        logo="https://media-2.api-sports.io/volley/teams/908.png"
-      />
-      <ClubCard
-        name="PSG Stal Nysa"
-        logo="https://media-2.api-sports.io/volley/teams/908.png"
-      />
-      <ClubCard
-        name="PSG Stal Nysa"
-        logo="https://media-2.api-sports.io/volley/teams/908.png"
-      />
-      <ClubCard
-        name="PSG Stal Nysa"
-        logo="https://media-2.api-sports.io/volley/teams/908.png"
+        id={2}
       />
     </div>
   );
