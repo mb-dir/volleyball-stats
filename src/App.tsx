@@ -7,6 +7,7 @@ import Players from "./components/Players/Players";
 import NotFound from "./components/NotFound/NotFound";
 import axios from "./api/axios";
 import { useEffect } from "react";
+import ClubView from "./components/Clubs/ClubView";
 
 function App() {
   // useEffect(() => {
@@ -26,7 +27,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="kluby" element={<Clubs />} />
+        <Route path="kluby">
+          <Route index element={<Clubs />} />
+          <Route path=":id" element={<ClubView />} />
+        </Route>
         <Route path="tabela" element={<Table />} />
         <Route path="mecze" element={<Games />} />
         <Route path="zawodnicy" element={<Players />} />
