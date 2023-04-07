@@ -13,8 +13,8 @@ function App() {
   // useEffect(() => {
   //   const getUsers = async () => {
   //     try {
-  //       const response = await axios.get("/teams", {
-  //         params: { league: "113", season: "2022" },
+  //       const response = await axios.get("/teams/statistics", {
+  //         params: { league: "113", season: "2022", team: "910" },
   //       });
   //       console.log(response.data.response);
   //       return response.data;
