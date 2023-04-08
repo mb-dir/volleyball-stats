@@ -5,8 +5,6 @@ import Table from "./components/Table/Table";
 import Games from "./components/Games/Games";
 import Players from "./components/Players/Players";
 import NotFound from "./components/NotFound/NotFound";
-import axios from "./api/axios";
-import { useEffect } from "react";
 import ClubView from "./components/Clubs/ClubView";
 
 function App() {
