@@ -21,7 +21,7 @@ const ClubView: React.FC<ClubViewProps> = ({ className }) => {
       }
     };
     fetchTeamStats();
-  }, []);
+  }, [id]);
 
   return (
     <div className={`clubs ${className || ""}`}>
@@ -40,16 +40,16 @@ const ClubView: React.FC<ClubViewProps> = ({ className }) => {
           />
         </div>
         <p>
-          Played(home/away/all):{`${stats?.games.played.home || ""}/${stats?.games.played
-            .away || ""}/${stats?.games.played.all || ""}`}
+          Played(home/away/all): {`${stats?.games.played.home ?? ""}/${stats?.games.played
+            .away ?? ""}/${stats?.games.played.all ?? ""}`}
         </p>
         <p>
-          Wins(home/away/all):{`${stats?.games.wins.home.total || ""}/${stats?.games.wins
-            .away.total || ""}/${stats?.games.wins.all.total || ""}`}
+          Wins(home/away/all): {`${stats?.games.wins.home.total ?? ""}/${stats?.games.wins
+            .away.total ?? ""}/${stats?.games.wins.all.total ?? ""}`}
         </p>
         <p>
-          Loses(home/away/all):{`${stats?.games.loses.home.total || ""}/${stats?.games.loses
-            .away.total || ""}/${stats?.games.loses.all.total || ""}`}
+          Loses(home/away/all): {`${stats?.games.loses.home.total ?? ""}/${stats?.games.loses
+            .away.total ?? ""}/${stats?.games.loses.all.total ?? ""}`}
         </p>
       </div>
     </div>

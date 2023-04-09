@@ -8,20 +8,6 @@ import NotFound from "./components/NotFound/NotFound";
 import ClubView from "./components/Clubs/ClubView";
 
 function App() {
-  // useEffect(() => {
-  //   const getUsers = async () => {
-  //     try {
-  //       const response = await axios.get("/teams/statistics", {
-  //         params: { league: "113", season: "2022", team: "910" },
-  //       });
-  //       console.log(response.data.response);
-  //       return response.data;
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   getUsers();
-  // }, []);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

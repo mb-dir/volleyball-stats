@@ -1,0 +1,32 @@
+.games {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-top: 2px solid lightslategray;
+  text-align: center;
+}
+.games__matchweek {
+  width: 40%;
+}
+.games__logo {
+  width: 25px;
+  margin: 0 5px 0 10px;
+}
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.results__link {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+.results__link:hover {
+  color: rgb(1, 168, 168);
+}
