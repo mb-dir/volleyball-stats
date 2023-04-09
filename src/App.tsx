@@ -6,24 +6,8 @@ import Games from "./components/Games/Games";
 import Players from "./components/Players/Players";
 import NotFound from "./components/NotFound/NotFound";
 import ClubView from "./components/Clubs/ClubView";
-import axios from "./api/axios";
-import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    const getUsers = async () => {
-      try {
-        const response = await axios.get("/games", {
-          params: { league: "113", season: "2022" },
-        });
-        console.log(response.data.response);
-        return response.data;
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    // getUsers();
-  }, []);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

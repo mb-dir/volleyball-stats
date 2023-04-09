@@ -20,8 +20,8 @@ const ClubView: React.FC<ClubViewProps> = ({ className }) => {
         console.error(error);
       }
     };
-    // fetchTeamStats();
-  }, []);
+    fetchTeamStats();
+  }, [id]);
 
   return (
     <div className={`clubs ${className || ""}`}>

@@ -19,7 +19,7 @@ const Games: React.FC<GamesProps> = ({ className }) => {
         console.error(error);
       }
     };
-    // fetchGames();
+    fetchGames();
   },[])
 
   const uniqueMatchweeks = [ ...new Set(games?.map(game => game.week)) ];
