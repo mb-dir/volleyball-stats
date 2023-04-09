@@ -17,7 +17,7 @@ const Clubs: React.FC<ClubsProps> = ({ className }) => {
         console.error(error);
       }
     };
-    fetchTeams();
+    // fetchTeams();
   }, []);
 
   return (
