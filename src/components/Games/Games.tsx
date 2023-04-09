@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 interface GamesProps {
   className?: string;
@@ -17019,7 +17020,6 @@ const mock = [
 ];
 
 const uniqueMatchweeks = [ ...new Set(mock.map(el => el.week)) ];
-console.log(uniqueMatchweeks);
 
 const Games: React.FC<GamesProps> = ({ className }) => {
   return (
@@ -17032,19 +17032,26 @@ const Games: React.FC<GamesProps> = ({ className }) => {
             .map(({ id, teams, scores }) => {
               return (
                 <div className="results" key={id}>
-                  <img
-                    className="games__logo"
-                    src={teams.home.logo}
-                    alt={`${teams.home.logo} logo`}
-                  />
-                  <p>{`${teams.home.name}`}</p>{" "}
-                  <img
-                    className="games__logo"
-                    src={teams.away.logo}
-                    alt={`${teams.away.logo} logo`}
-                  />
-                  <p>{`${teams.away.name} - ${scores.home ??
-                    "?"}:${scores.away ?? "?"}`}</p>
+                  <Link className="results__link" to={`/kluby/${teams.home.id}`}>
+                    <img
+                      className="games__logo"
+                      src={teams.home.logo}
+                      alt={`${teams.home.logo} logo`}
+                    />
+                    <p>{`${teams.home.name}`}</p>
+                  </Link>{" "}
+                  <Link className="results__link" to={`/kluby/${teams.away.id}`}>
+                    <img
+                      className="games__logo"
+                      src={teams.away.logo}
+                      alt={`${teams.away.logo} logo`}
+                    />
+                    <p>{teams.away.name}</p>
+                  </Link>{" "}
+                  <span>
+                    {" - "}
+                    {`${scores.home ?? "?"}:${scores.away ?? "?"}`}
+                  </span>
                 </div>
               );
             })}
