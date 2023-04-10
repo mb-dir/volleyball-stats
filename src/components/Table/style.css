@@ -1,0 +1,28 @@
+.tableView {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-top: 2px solid lightslategray;
+  text-align: center;
+}
+.table {
+  width: 80%;
+  border-spacing: 3px;
+}
+.table__row {
+  background-color: azure;
+}
+.table__row:nth-child(2n) {
+  background-color: rgb(1, 168, 168);
+  color: azure;
+}
+.table__cell {
+  padding: 3px;
+}
+.table__cell--small {
+  width: 25px;
+}
