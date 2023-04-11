@@ -1,6 +1,7 @@
 .header {
   padding-left: 20px;
   width: 100%;
+  border-bottom: 2px solid lightslategray;
 }
 .header__content {
   color: rgb(1, 168, 168);

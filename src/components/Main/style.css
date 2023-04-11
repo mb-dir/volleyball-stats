@@ -1,0 +1,17 @@
+.mainContent {
+  text-align: center;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 75vh;
+}
+.mainContent__header {
+  color: rgb(1, 168, 168);
+  font-size: 48px;
+  margin-bottom: 0;
+}
+.green {
+  color: #00ac5e;
+}
