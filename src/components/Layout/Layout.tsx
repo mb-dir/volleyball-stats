@@ -10,12 +10,7 @@ const Layout: React.FC<LayoutProps> = () => {
     <main className="App">
       <Header />
       <Menu
-        items={[
-          { label: "Tabela", onClick: () => console.log("Item 1 clicked") },
-          { label: "Mecze", onClick: () => console.log("Item 2 clicked") },
-          { label: "Kluby", onClick: () => console.log("Item 3 clicked") },
-          { label: "Zawodnicy", onClick: () => console.log("Item 3 clicked") },
-        ]}
+        items={[ { label: "Tabela" }, { label: "Mecze" }, { label: "Kluby" } ]}
       />
       <Outlet />
     </main>
