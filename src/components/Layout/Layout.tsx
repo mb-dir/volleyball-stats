@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Menu from "../Menu/Menu";
 import Header from "../Header/Header";
-import "./layout.css";
+import "./style.css";
 
 interface LayoutProps {}
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "./menu.css";
+import "./style.css";
 import { Link, useLocation } from "react-router-dom";
 
 interface MenuItem {
