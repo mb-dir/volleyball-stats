@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { getGames, singleGame } from "../../services/games";
+import useLoader from "../../hooks/use-loader";
+import Loader from "../Loader/Loader";
 
 interface GamesProps {
   className?: string;
@@ -9,23 +11,23 @@ interface GamesProps {
 
 const Games: React.FC<GamesProps> = ({ className }) => {
   const [games, setGames] = useState<singleGame[]>([]);
+  const {fetchData, isLoading} = useLoader();
 
   useEffect(()=>{
     const fetchGames = async () => {
-      try {
+      await fetchData(async ()=>{
         const data = await getGames("113", "2022");
         setGames(data);
-      } catch (error) {
-        console.error(error);
-      }
+      })
+
     };
     fetchGames();
-  },[])
+  }, [])
 
   const uniqueMatchweeks = [ ...new Set(games?.map(game => game.week)) ];
   return (
     <div className={className || "games"}>
-      {uniqueMatchweeks.map(matchweek => (
+      {isLoading ? <Loader /> : uniqueMatchweeks.map(matchweek => (
         <div key={matchweek} className="games__matchweek">
           <h2>{matchweek.length > 2 ? matchweek : `Kolejka ${matchweek}`}</h2>
           {games

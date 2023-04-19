@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getGames, singleGame } from "../services/games";
+import useLoader from "./use-loader";
 
 type TeamPoints = {
   [key: string]: number;
@@ -35,15 +36,14 @@ const updateTablePoints = (
 
 const useTable = () => {
   const [ games, setGames ] = useState<singleGame[]>([]);
+  const { isLoading, fetchData } = useLoader();
 
   useEffect(() => {
     const fetchGames = async () => {
-      try {
+      await fetchData(async () => {
         const data = await getGames("113", "2022");
         setGames(data);
-      } catch (error) {
-        console.error(error);
-      }
+      });
     };
     fetchGames();
   }, []);
@@ -77,7 +77,7 @@ const useTable = () => {
     .sort(([ , pointsA ], [ , pointsB ]) => pointsB - pointsA)
     .map(([ team, points ]) => ({ team, points }));
 
-  return sortedTable;
+  return { sortedTable, isLoading };
 };
 
 export default useTable;
