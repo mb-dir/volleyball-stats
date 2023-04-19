@@ -4,6 +4,7 @@ import "./style.css";
 import { singleTeamStatistic, getTeamStats } from "../../services/teams";
 import useLoader from "../../hooks/use-loader";
 import Loader from "../Loader/Loader";
+import { PLUSLIGA_DATA } from "../../enums";
 interface ClubViewProps {
   className?: string;
 }
@@ -16,7 +17,7 @@ const ClubView: React.FC<ClubViewProps> = ({ className }) => {
   useEffect(() => {
     const fetchTeamStats = async () => {
       await fetchData(async()=>{
-        const data = await getTeamStats("113", "2022", id + "");
+        const data = await getTeamStats(PLUSLIGA_DATA.ID, PLUSLIGA_DATA.SEASON, id + "");
         setStats(data);
       })
     };

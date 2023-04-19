@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getGames, singleGame } from "../../services/games";
 import useLoader from "../../hooks/use-loader";
 import Loader from "../Loader/Loader";
+import { PLUSLIGA_DATA } from "../../enums";
 
 interface GamesProps {
   className?: string;
@@ -16,7 +17,7 @@ const Games: React.FC<GamesProps> = ({ className }) => {
   useEffect(()=>{
     const fetchGames = async () => {
       await fetchData(async ()=>{
-        const data = await getGames("113", "2022");
+        const data = await getGames(PLUSLIGA_DATA.ID, PLUSLIGA_DATA.SEASON);
         setGames(data);
       })
 

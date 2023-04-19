@@ -3,6 +3,7 @@ import ClubCard from "./ClubCard";
 import { getTeams, singleTeam } from "../../services/teams";
 import useLoader from "../../hooks/use-loader";
 import Loader from "../Loader/Loader";
+import { PLUSLIGA_DATA } from "../../enums";
 interface ClubsProps {
   className?: string;
 }
@@ -14,7 +15,7 @@ const Clubs: React.FC<ClubsProps> = ({ className }) => {
   useEffect(() => {
     const fetchTeams = async () => {
       await fetchData(async () => {
-        const data = await getTeams("113", "2022");
+        const data = await getTeams(PLUSLIGA_DATA.ID, PLUSLIGA_DATA.SEASON);
         setTeams(data);
       });
     };

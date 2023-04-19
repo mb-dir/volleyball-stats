@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getGames, singleGame } from "../services/games";
 import useLoader from "./use-loader";
+import { PLUSLIGA_DATA } from "../enums";
 
 type TeamPoints = {
   [key: string]: number;
@@ -41,7 +42,7 @@ const useTable = () => {
   useEffect(() => {
     const fetchGames = async () => {
       await fetchData(async () => {
-        const data = await getGames("113", "2022");
+        const data = await getGames(PLUSLIGA_DATA.ID, PLUSLIGA_DATA.SEASON);
         setGames(data);
       });
     };
