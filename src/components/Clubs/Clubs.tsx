@@ -22,6 +22,7 @@ const Clubs: React.FC<ClubsProps> = ({ className }) => {
 
   return (
     <div className={`clubs ${className || ""}`}>
+      <h2 className="clubs__header">Kluby</h2>
       {(teams || []).map(team => {
         return (
           <ClubCard
