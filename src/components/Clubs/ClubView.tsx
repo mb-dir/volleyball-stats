@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./style.css";
 import { singleTeamStatistic, getTeamStats } from "../../services/teams";
-
+import useLoader from "../../hooks/use-loader";
+import Loader from "../Loader/Loader";
+import { PLUSLIGA_DATA } from "../../enums";
 interface ClubViewProps {
   className?: string;
 }
@@ -10,22 +12,21 @@ interface ClubViewProps {
 const ClubView: React.FC<ClubViewProps> = ({ className }) => {
   const { id } = useParams();
   const [ stats, setStats ] = useState<singleTeamStatistic>();
+  const {isLoading, fetchData} = useLoader();
 
   useEffect(() => {
     const fetchTeamStats = async () => {
-      try {
-        const data = await getTeamStats("113", "2022", id + "");
+      await fetchData(async()=>{
+        const data = await getTeamStats(PLUSLIGA_DATA.ID, PLUSLIGA_DATA.SEASON, id + "");
         setStats(data);
-      } catch (error) {
-        console.error(error);
-      }
+      })
     };
     fetchTeamStats();
-  }, [id]);
+  }, []);
 
   return (
     <div className={`clubs ${className || ""}`}>
-      <div className="clubInfo">
+      {isLoading ? <Loader /> : <div className="clubInfo">
         <h2 className="clubInfo__name">{stats?.team.name || ""}</h2>
         <div className="clubInfo__imgContainer">
           <img
@@ -51,7 +52,7 @@ const ClubView: React.FC<ClubViewProps> = ({ className }) => {
           Loses(home/away/all): {`${stats?.games.loses.home.total ?? ""}/${stats?.games.loses
             .away.total ?? ""}/${stats?.games.loses.all.total ?? ""}`}
         </p>
-      </div>
+      </div>}
     </div>
   );
 };

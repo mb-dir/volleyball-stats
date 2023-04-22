@@ -1,37 +1,44 @@
 import React, { useState, useEffect } from "react";
 import ClubCard from "./ClubCard";
 import { getTeams, singleTeam } from "../../services/teams";
+import useLoader from "../../hooks/use-loader";
+import Loader from "../Loader/Loader";
+import { PLUSLIGA_DATA } from "../../enums";
 interface ClubsProps {
   className?: string;
 }
 
 const Clubs: React.FC<ClubsProps> = ({ className }) => {
   const [ teams, setTeams ] = useState<singleTeam[]>([]);
+  const { isLoading, fetchData } = useLoader();
 
   useEffect(() => {
     const fetchTeams = async () => {
-      try {
-        const data = await getTeams("113", "2022");
+      await fetchData(async () => {
+        const data = await getTeams(PLUSLIGA_DATA.ID, PLUSLIGA_DATA.SEASON);
         setTeams(data);
-      } catch (error) {
-        console.error(error);
-      }
+      });
     };
     fetchTeams();
   }, []);
 
   return (
     <div className={`clubs ${className || ""}`}>
-      {(teams || []).map(team => {
-        return (
-          <ClubCard
-            key={team.id}
-            name={team.name}
-            logo={team.logo}
-            id={team.id}
-          />
-        );
-      })}
+      <h2 className="clubs__header">Kluby</h2>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        (teams || []).map(team => {
+          return (
+            <ClubCard
+              key={team.id}
+              name={team.name}
+              logo={team.logo}
+              id={team.id}
+            />
+          );
+        })
+      )}
     </div>
   );
 };
